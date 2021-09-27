@@ -1708,10 +1708,10 @@
 		if(typeof Gun === 'undefined'){ return }
 
 		var noop = function(){}, store, u;
-		try{store = (Gun.window||noop).localStorage}catch(e){}
+		try{store = false}catch(e){}
 		if(!store){
 			Gun.log("Warning: No localStorage exists to persist data to!");
-			store = {setItem: function(k,v){this[k]=v}, removeItem: function(k){delete this[k]}, getItem: function(k){return this[k]}};
+			store = {setItem: function(k,v){return}, removeItem: function(k){return}, getItem: function(k){return}};
 		}
 		Gun.on('create', function lg(root){
 			this.to.next(root);
