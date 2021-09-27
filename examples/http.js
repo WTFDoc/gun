@@ -31,8 +31,6 @@
   }
 
   var gun = Gun({
-    radisk: false,
-    localStorage: false,
     web: config.server.listen(config.port),
     peers: config.peers,
   });
